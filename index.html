@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This is the UI associated with LegalRecord.sol
+    There will be a section for each role -->
+    <section>
+        <h2>Court</h2>
+        <form>
+            <h3>Register a new Case</h3>
+            <label>
+                Case Description:
+                <input type="text" id="caseDescription">
+            </label>
+            <label>
+                Plaintiff Lawyer Account:
+                <input type="text" id="plaintiffLawyerAccount">
+            </label>
+            <label>
+                Defendant Lawyer Account:
+                <input type="text" id="defendantLawyerAccount">
+            </label>
+        </form>
+        <form>
+            <h3>Assign Judge</h3>
+            <label>
+                Case ID:
+                <input type="text" id="caseID">
+            </label>
+            <label>
+                Judge Account:
+                <input type="text" id="judgeAccount">
+        </form>
+    </section>
+    <section>
+        <h2>Lawyer</h2>
+        <form>
+            <h3>Submit Evidence</h3>
+            <label>
+                Case ID:
+                <input type="text" id="caseID">
+            </label>
+            <label>
+                Evidence:
+                <input type="file" id="evidence">
+            </label>
+        </form>
+        <form>
+            <h3>Submit Testimony</h3>
+            <label>
+                Case ID:
+                <input type="text" id="caseID">
+            </label>
+            <label>
+                Testimony:
+                <input type="file" id="testimony">
+            </label>
+        </form>
+    </section>
+    <section>
+        <h2>Judge</h2>
+        <form>
+            <h3>Submit Verdict</h3>
+            <label>
+                Case ID:
+                <input type="text" id="caseID">
+            </label>
+            <label>
+                Verdict:
+                <input type="text" id="verdict">
+            </label>
+        </form>
+    </section>
+</body>
+</html>
