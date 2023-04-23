@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer type="module" src="index.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
     There will be a section for each role -->
     <section>
         <h2>Court</h2>
-        <form>
+        <form id="registration">
             <h3>Register a new Case</h3>
             <label>
                 Case Description:
@@ -19,14 +20,15 @@
             </label>
             <label>
                 Plaintiff Lawyer Account:
-                <input type="text" id="plaintiffLawyerAccount">
+                <input type="text" id="plaintiffLawyer">
             </label>
             <label>
                 Defendant Lawyer Account:
-                <input type="text" id="defendantLawyerAccount">
+                <input type="text" id="defendantLawyer">
             </label>
+            <button type="submit">Submit</button>
         </form>
-        <form>
+        <form id="assign-judge">
             <h3>Assign Judge</h3>
             <label>
                 Case ID:
@@ -34,12 +36,13 @@
             </label>
             <label>
                 Judge Account:
-                <input type="text" id="judgeAccount">
+                <input type="text" id="judge">
+                <button type="submit">Submit</button>
         </form>
     </section>
     <section>
         <h2>Lawyer</h2>
-        <form>
+        <form id="submit-evidence">
             <h3>Submit Evidence</h3>
             <label>
                 Case ID:
@@ -47,10 +50,11 @@
             </label>
             <label>
                 Evidence:
-                <input type="file" id="evidence">
+                <input type="text" id="evidence">
             </label>
+            <button type="submit">Submit</button>
         </form>
-        <form>
+        <form id="submit-testimony">
             <h3>Submit Testimony</h3>
             <label>
                 Case ID:
@@ -58,13 +62,14 @@
             </label>
             <label>
                 Testimony:
-                <input type="file" id="testimony">
+                <input type="text" id="testimony">
             </label>
+            <button type="submit">Submit</button>
         </form>
     </section>
     <section>
         <h2>Judge</h2>
-        <form>
+        <form id="sumbit-verdict">
             <h3>Submit Verdict</h3>
             <label>
                 Case ID:
@@ -74,6 +79,7 @@
                 Verdict:
                 <input type="text" id="verdict">
             </label>
+            <button type="submit">Submit</button>
         </form>
     </section>
 </body>
