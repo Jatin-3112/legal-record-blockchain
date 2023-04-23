@@ -64,22 +64,26 @@ contract LegalRecord {
     }
 
     function setJudge(uint256 _caseId, address _judge) public onlyCourt {
+        require(cases[_caseId].state == State.PENDING, "The case is already in progress or closed");
         cases[_caseId].judge = _judge;
         cases[_caseId].state = State.IN_PROGRESS;
         emit JudgeSet(_caseId, _judge);
     }
 
     function addEvidence(uint256 _caseId, string memory _evidence) public onlyLawyers(_caseId) {
+        require(cases[_caseId].state == State.IN_PROGRESS, "The case is not in progress");
         cases[_caseId].evidences.push(_evidence);
         emit EvidenceAdded(_caseId, _evidence);
     }
 
     function addWitnessTestimony(uint256 _caseId, string memory _testimony) public onlyLawyers(_caseId) {
+        require(cases[_caseId].state == State.IN_PROGRESS, "The case is not in progress");
         cases[_caseId].witnessTestimonies.push(_testimony);
         emit WitnessTestimonyAdded(_caseId, _testimony);
     }
 
     function setJudgment(uint256 _caseId, string memory _judgment) public onlyJudge(_caseId) {
+        require(cases[_caseId].state == State.IN_PROGRESS, "The case is not in progress");
         cases[_caseId].judgment = _judgment;
         cases[_caseId].state = State.CLOSED;
         emit JudgmentSet(_caseId, _judgment);

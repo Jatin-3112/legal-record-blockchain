@@ -1,5 +1,64 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_caseId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_evidence",
+				"type": "string"
+			}
+		],
+		"name": "addEvidence",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_caseId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_testimony",
+				"type": "string"
+			}
+		],
+		"name": "addWitnessTestimony",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_plaintiffLawyer",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_defendantLawyer",
+				"type": "address"
+			}
+		],
+		"name": "createCase",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -99,6 +158,42 @@
 		"type": "event"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_caseId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_judge",
+				"type": "address"
+			}
+		],
+		"name": "setJudge",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_caseId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_judgment",
+				"type": "string"
+			}
+		],
+		"name": "setJudgment",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -116,65 +211,6 @@
 		],
 		"name": "WitnessTestimonyAdded",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_caseId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_evidence",
-				"type": "string"
-			}
-		],
-		"name": "addEvidence",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_caseId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_testimony",
-				"type": "string"
-			}
-		],
-		"name": "addWitnessTestimony",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_plaintiffLawyer",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_defendantLawyer",
-				"type": "address"
-			}
-		],
-		"name": "createCase",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"inputs": [
@@ -245,42 +281,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_caseId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_judge",
-				"type": "address"
-			}
-		],
-		"name": "setJudge",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_caseId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_judgment",
-				"type": "string"
-			}
-		],
-		"name": "setJudgment",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
