@@ -11,6 +11,18 @@
     <!-- This is the UI associated with LegalRecord.sol
     There will be a section for each role -->
     <section>
+        <h2>For all associated with the case</h2>
+        <form id="get-case">
+            <h3>View Case Details</h3>
+            <label>
+                Case ID:
+                <input type="number" id="caseID">
+            </label>
+            <button type="submit">Submit</button>
+            <div id="case-details"></div>
+        </form>
+    </section>
+    <section>
         <h2>Court</h2>
         <form id="registration">
             <h3>Register a new Case</h3>
@@ -32,7 +44,7 @@
             <h3>Assign Judge</h3>
             <label>
                 Case ID:
-                <input type="text" id="caseID">
+                <input type="number" id="caseID">
             </label>
             <label>
                 Judge Account:
@@ -46,7 +58,7 @@
             <h3>Submit Evidence</h3>
             <label>
                 Case ID:
-                <input type="text" id="caseID">
+                <input type="number" id="caseID">
             </label>
             <label>
                 Evidence:
@@ -58,7 +70,7 @@
             <h3>Submit Testimony</h3>
             <label>
                 Case ID:
-                <input type="text" id="caseID">
+                <input type="number" id="caseID">
             </label>
             <label>
                 Testimony:
@@ -73,7 +85,7 @@
             <h3>Submit Verdict</h3>
             <label>
                 Case ID:
-                <input type="text" id="caseID">
+                <input type="number" id="caseID">
             </label>
             <label>
                 Verdict:

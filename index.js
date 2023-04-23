@@ -315,10 +315,6 @@ if (window.ethereum == null) {
     console.log("Signer", signer)
 }
 
-// Create a Contract object connected to the contract at the    
-// specified address. This is a read-only interface, so we only
-// need the provider.
-
 document.getElementById("registration").addEventListener("submit", async (event) => {
     event.preventDefault();
     const contract = new ethers.Contract(contractAddress, contractABI, signer);
@@ -326,4 +322,45 @@ document.getElementById("registration").addEventListener("submit", async (event)
     const plaintiffLawyer = document.getElementById("plaintiffLawyer").value;
     const defendantLawyer = document.getElementById("defendantLawyer").value;
     contract.createCase(caseDescription, plaintiffLawyer, defendantLawyer);
+});
+
+document.getElementById("assign-judge").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    const caseId = document.querySelector("#assign-judge #caseID").value;
+    const judge = document.getElementById("judge").value;
+    contract.setJudge(caseId, judge);
+});
+
+document.getElementById("submit-evidence").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    const caseId = document.querySelector("#submit-evidence #caseID").value;
+    const evidence = document.getElementById("evidence").value;
+    contract.addEvidence(caseId, evidence);
+});
+
+document.getElementById("submit-testimony").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    const caseId = document.querySelector("#submit-testimony #caseID").value;
+    const testimony = document.getElementById("testimony").value;
+    contract.addWitnessTestimony(caseId, testimony);
+});
+
+document.getElementById("submit-verdict").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    const caseId = document.querySelector("#submit-verdict #caseID").value;
+    const verdict = document.getElementById("verdict").value;
+    contract.setJudgment(caseId, verdict);
+});
+
+document.getElementById("get-case").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    const caseId = document.querySelector("#get-case #caseID").value;
+    const caseDetails = await contract.getCase(caseId);
+    console.log(caseDetails);
+    document.getElementById("case-details").innerText = caseDetails;
 });
